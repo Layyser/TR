@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" type="text/css" href="login-register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="/Home/image1">
+    <title>Iniciar sesion en MercaSanvi</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+</head>
+<body>
+
+    <div class="all">
+        <div class="register-form">
+            <h1>Regístrate en MercaSanvi</h1>
+            <form action="/register" method="post"></form>
+                <label for="user">Nombre de usuario</label>
+                <input id="user" type="text" autocomplete="off" required>
+    
+                <label for="email">Correo electrónico</label>
+                <input id="email" type="email" required>
+    
+                <label for="pass">Contraseña</label>
+                <input id="pass" type="password" required>
+    
+                <label for="name">Nombre completo</label>
+                <input id="name" type="text" required>
+    
+                <label for="age">Fecha de nacimiento</label>
+                <input id="age" type="date" required>
+    
+                <label for="gender">Género</label>
+                <select name="gender" id="gender" class="select-css">
+                    <option value="Hombre" selected>Hombre</option>
+                    <option value="Mujer">Mujer</option>
+                    <option value="Otro">Otro</option>
+                    <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+                </select>
+    
+                <div style="display: inline;">
+                    <a href="/login" class="btn-cancel">Cancelar</a><input id="send" type="submit" class="btn-save" value="Registrarse">
+                </div>
+            </form>
+        </div>
+
+
+        <div class="background">
+            <img src="svgs/40.svg" class="background-i">
+        </div>
+    </div>
+    
+    <script src="register.js"></script>
+</body>
+</html>

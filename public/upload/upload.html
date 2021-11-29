@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir producto - MercaSanvi</title>
+    <link rel="icon" href="/Home/image1">
+    <link rel="stylesheet" type="text/css" href="upload.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <ul class="ul">
+            <li class="left-li"><a class="categories"><img src="svgs/25.svg"></a></li>
+            <li><a class="logo-padding" href="/home"><img class="logo" src="svgs/13.svg"></a></li>
+            <li><a class="mercasanvi" href="/home">MercaSanvi</a></li>
+            <li class="out-li"><a href="/cesta" class="inside-a">Cesta</a></li>
+            <li class="center-li"></li>
+            <li id="prof" class="out-li"><a href="/profile" class="inside-a">Perfil</a></li>
+            <li class="right-li" style="float:right"><a href="/lang" class="inside-a">Idioma</a></li>
+        </ul>
+    </header>
+
+    <div class="content">
+        <header class="header2">
+            <ul class="ul2">
+                <li class="h" id="LI1">Información básica</li>
+                <li class="LI2" id="LI2">Variaciones</li>
+                <li class="LI3" id="LI3">Precios</li>
+                <li class="LI4" id="LI4">Imagenes</li>
+                <li class="LI5" id="LI5">Descripción</li>
+                <li class="LI6" id="LI6">Palabras clave</li>
+                <li class="LI7" id="LI7">Más detalles</li>
+                <li class="LI8" id="LI8"></li>
+            </ul>
+        </header>
+        <div class="info">
+            <div class="DIV1" id="DIV1">
+                <div class="content2">
+                    <div>
+                        <h2 class="hola">Bienvenido al apartado de subir un producto</h2>
+                    </div>
+                    <ul>
+                        <li>Para iniciar, introduce aqui el nombre de tu producto</li>
+                        <li><input type="text" id="productname"></li>
+                        <li>
+                            <select class="selection" id="sel">
+                                <option selected="selected" value="search-alias=aps">Todas las categorías</option>
+                                <option value="search-alias=grocery">Alimentación</option>
+                                <option value="search-alias=baby">Bebé</option>
+                                <option value="search-alias=beauty">Belleza</option>
+                                <option value="search-alias=diy">Herramientas</option>>
+                                <option value="search-alias=vehicles">Mecánicos</option>
+                                <option value="search-alias=sporting">Deportes</option>
+                                <option value="search-alias=electronics">Electrónica</option>
+                                <option value="search-alias=luggage">Equipaje</option>
+                                <option value="search-alias=appliances">Electrodomésticos</option>
+                                <option value="search-alias=handmade">Artesanal</option>
+                                <option value="search-alias=kitchen">Hogar y cocina</option>
+                                <option value="search-alias=lighting">Iluminación</option>
+                                <option value="search-alias=computers">Informática</option>
+                                <option value="search-alias=mi">Música</option>
+                                <option value="search-alias=lawngarden">Jardín</option>
+                                <option value="search-alias=jewelry">Joyería</option>
+                                <option value="search-alias=toys">Juguetes y juegos</option>
+                                <option value="search-alias=stripbooks">Libros</option>
+                                <option value="search-alias=under-ten-dollars">Menos de 10€</option>
+                                <option value="search-alias=fashion">Moda</option>
+                                <option value="search-alias=office-products">Papelería</option>
+                                <option value="search-alias=dvd">Películas y TV</option>
+                                <option value="search-alias=pets">Mascotas</option>
+                                <option value="search-alias=apparel">Ropa y accesorios</option>
+                                <option value="search-alias=hpc">Cuidado personal</option>
+                                <option value="search-alias=videogames">Videojuegos</option>
+                            </select>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="buttons">
+                    <button class="backhome"></button>
+                    <button class="button2" id="B1"><img src="svgs/35.svg"></button>
+                </div>
+            </div>
+
+
+            <div class="DIV2" id="DIV2">
+                <div class="content2">
+                    <div class="separe2">
+                        <h2 class="hola">Variaciones de color</h2>
+                        <h2 class="hola">Variaciones de tamaño</h2>
+                    </div>
+                    <div class="content4">
+                        <div class="colors">
+                            <div class="colors-palette">
+                                <input type="checkbox" id="color1" class="white-color">
+                                <input type="checkbox" id="color2" class="gray-color">
+                                <input type="checkbox" id="color3" class="black-color">
+                                <input type="checkbox" id="color4" class="lime-color">
+                                <input type="checkbox" id="color5" class="green-color">
+                                <input type="checkbox" id="color6" class="turquoise-color">
+                                <input type="checkbox" id="color7" class="lightblue-color">
+                                <input type="checkbox" id="color8" class="blue-color">
+                                <input type="checkbox" id="color9" class="purple-color">
+                                <input type="checkbox" id="color10" class="pink-color">
+                                <input type="checkbox" id="color11" class="red-color">
+                                <input type="checkbox" id="color12" class="orange-color">
+                                <input type="checkbox" id="color13" class="yellow-color">
+                                <input type="checkbox" id="color14" class="golden-color">
+                                <input type="checkbox" id="color15" class="brown-color">
+                            </div>
+                            <ul class="footer">
+                                <li>Solamente en caso de que tu producto contenga variedades de color:</li>
+                                <li>Deberás seleccionar los distintos colores en los que esten disponibles tus productos</li>
+                            </ul>
+                        </div>
+                        <div class="sizes">
+                            <div class="sizes-box">
+                                <input type="checkbox" class="size-box" name="s-size" id="small"/>
+                                <input type="checkbox" class="size-box" name="s-size" id="medium" />
+                                <input type="checkbox" class="size-box" name="s-size" id="large" />
+                                <input type="checkbox" class="size-box" name="s-size" id="x-large" />
+                                <input type="checkbox" class="size-box" name="s-size" id="xx-large" />
+                              
+                                <label class="size-label" for="small">S</label>
+                                <label class="size-label" for="medium">M</label>
+                                <label class="size-label" for="large">L</label>
+                                <label class="size-label" for="x-large">XL</label>
+                                <label class="size-label" for="xx-large">XXL</label>
+                              
+                            </div>
+                            <ul class="footer2">
+                                <li>Solamente en caso de que tu producto contenga variedades de tamaño:</li>
+                                <li>Deberás seleccionar los distintos tamaños en los que esten disponibles tus productos </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button1" id="BN2"><img src="svgs/5.svg"></button>
+                    <button class="button2" id="B2"><img src="svgs/35.svg"></button>
+                </div>
+            </div>
+
+
+            <div class="DIV3" id="DIV3">
+                <div class="content2">
+                    <div>
+                        <h2 class="hola">Precio del producto</h2>
+                    </div>
+                    <div class="content3">
+                        <div class="box-prices">
+                            <form class="prices">
+                            <label for="units">Cantidad de unidades minima*¹:</label>
+                            <input type="number" name="units" min="1" value="1" max="10" id="units" required>
+                            <br><br><br><br><br><br><br><br><br><br>
+                            <label for="price">Precio por la cantidad anterior*² en €:</label>
+                            <input type="number" name="price" min="0" value="0" step="any" id="price" required>
+                            <br><br><br><br><br><br><br><br><br><br>
+                            <label for="centimos">Céntimos:</label>
+                            <input type="number" name="price" min="0" value="00" step="any" id="centimos" required>
+                            </form>
+                            <ul class="remove-dot">
+                                <li>*¹ Añade en este campo la cantidad minima de productos que venderás, por ejemplo en pares o en unidades</li>
+                                <li>*² Añade en este campo la cantidad de dinero que cobrarás por las unidades seleccionadas anteriormente</li>
+                                <li class="gray">+ En un futuro añadiremos posibilidad de vender con ofertas como por ejemplo 3x2</li>
+                                <br>
+                                <p class="price-sentence" id="price-sentence"></p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button1" id="BN3"><img src="svgs/5.svg"></button>
+                    <button class="button2" id="B3"><img src="svgs/35.svg"></button>
+                </div>
+            </div>
+
+
+            <div class="DIV4" id="DIV4">
+                <div class="content2">
+                    <div class="separe">
+                        <h2 class="align-center">Imagen principal ⬇</h2>
+                        <h2>Pautas para subir las imagenes de tus productos</h2>
+                    </div>
+                    <form class="images" method="POST" enctype="multipart/form-data" action="/upload-images">
+                        <div class="img1">       
+                            <div class="image-preview" id="imagePreview">
+                                <img src="svgs/36.svg" alt="Image Preview" class="image-preview__image" id="image1"> 
+                            </div>
+                            <input type="file" name="inpFile" id="inpFile" accept="image/png, image/jpeg, image/gif" required>
+                        </div>
+                        <div class="text-img">
+                            <p>Escoge imagenes que sean claras, que aporten información y sean atractivas.</p>
+                            <p>Las imagenes deben de cumplir las siguientes condiciones:</p>
+                            <ul>
+                                <li>La imagen principal es obligatoria para subir el producto, las demás son opcionales</li>
+                                <li>Los productos deben ocupar como minimo un 70% de la imagen</li>
+                                <li>Las imagenes solo deben de mostrar el producto a la venta</li>
+                                <li>Las imagenes solo se pueden subir en PNG, JPEG/JPG y GIF</li>
+                            </ul>
+                            <p>Se recomiendan las siguientes condiciones:</p>
+                            <ul>
+                                <li>La imagen principal debería contener un fondo por completo del mismo color</li>
+                                <li>Las imagenes no deberían contener marcas de agua o similar</li>
+                                <li>Las imagenes deberían de tener una buena resolución</li>
+                                <li>Si tu producto tiene variedades de otro color, añade en las imagenes secundarias los demás colores</li>
+                            </ul>
+                        </div>
+                        <div class="img2">
+                            <div class="image-preview" id="imagePreview2">
+                                <img src="svgs/36.svg" alt="Image Preview" class="image-preview__image2" id="image2"> 
+                            </div>
+                            <input type="file" name="inpFile2" id="inpFile2" accept="image/png, image/jpeg, image/gif">
+                        </div>
+                        <div class="img3">    
+                            <div class="image-preview" id="imagePreview3">
+                                <img src="svgs/36.svg" alt="Image Preview" class="image-preview__image3" id="image3"> 
+                            </div>
+                            <input type="file" name="inpFile3" id="inpFile3" accept="image/png, image/jpeg, image/gif">
+                        </div>
+                        <div class="img4">
+                            <div class="image-preview" id="imagePreview4">
+                                <img src="svgs/36.svg" alt="Image Preview" class="image-preview__image4" id="image4"> 
+                            </div>
+                            <input type="file" name="inpFile4" id="inpFile4" accept="image/png, image/jpeg, image/gif">
+                        </div>
+                    </form>
+                </div>
+                <div class="buttons">
+                    <button class="button1" id="BN4"><img src="svgs/5.svg"></button>
+                    <button class="button2" id="B4"><img src="svgs/35.svg"></button>
+                </div>
+            </div>
+
+
+            <div class="DIV5" id="DIV5">
+                <div class="content2">
+                    <div>
+                        <h2 class="hola">Añade una descripción al producto</h2>
+                    </div>
+                    <div class="content3">
+                        <div class="box-prices">
+                            <form class="description">
+                            <label for="units">Descripción del producto:</label>
+                            <p id="currentWords" class="gray">Letras restantes: 2000</p>
+                            <textarea id="contar-palabras" name="txtname" rows="4" cols="50" maxlength="2000"></textarea>
+                            </form>
+                            <ul class="remove-dot">
+                                <li>Tu descripción no puede contener más de 2000 palabras</li>
+                                <li>Los detalles como las dimensones, materiales, puedes colocarlos en la pestaña de "más detalles"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button1" id="BN5"><img src="svgs/5.svg"></button>
+                    <button class="button2" id="B5"><img src="svgs/35.svg"></button>
+                </div>
+            </div>
+
+
+            <div class="DIV6" id="DIV6">
+                <div class="content2">
+                    <div>
+                        <h2 class="hola">Añadir palabras clave</h2>
+                    </div>
+                    <ul>
+                        <li>Añade un máximo de 6 palabras que ayudaran a tu producto a tener mas visibilidad</li>
+                        <li><input type="text" maxlength="30" id="keyword1"></li>
+                        <li><input type="text" maxlength="30" id="keyword2"></li>
+                        <li><input type="text" maxlength="30" id="keyword3"></li>
+                        <li><input type="text" maxlength="30" id="keyword4"></li>
+                        <li><input type="text" maxlength="30" id="keyword5"></li>
+                        <li><input type="text" maxlength="30" id="keyword6"></li>
+                    </ul>
+                </div>
+                <div class="buttons">
+                    <button class="button1" id="BN6"><img src="svgs/5.svg"></button>
+                    <button class="button2" id="B6"><img src="svgs/35.svg"></button>
+                </div>
+            </div>
+
+
+            <div class="DIV7" id="DIV7">
+                <div class="content2">
+                    <div>
+                        <h2 class="hola">Añade detalles al producto</h2>
+                    </div>
+                    <div class="content3">
+                        <div class="box-prices">
+                            <form class="description">
+                            <label for="units">Añade detalles del producto:</label>
+                            <p id="currentWords2" class="gray">Letras restantes: 2000</p>
+                            <textarea id="contar-palabras2" name="txtname" rows="4" cols="50" maxlength="2000"></textarea>
+                            </form>
+                            <ul class="remove-dot">
+                                <li>Añade detalles no puede contener más de 2000 palabras</li>
+                                <li>Añade solamente detalles como el tamaño, materiales, marca...</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="button1" id="BN7"><img src="svgs/5.svg"></button>
+                    <button class="button2" id="B7"><img src="svgs/35.svg"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="switch-upload.js"></script>
+</body>
+</html>

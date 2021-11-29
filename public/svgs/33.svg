@@ -1,0 +1,11 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+	<title>upload-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #ffffff } 
+		.shp1 { fill: none } 
+	</style>
+	<path id="Layer" class="shp0" d="M6 18L7.41 19.41L15 11.83L15 30L17 30L17 11.83L24.59 19.41L26 18L16 8L6 18L6 18Z" />
+	<path id="Layer" class="shp0" d="M6 8L6 4L26 4L26 8L28 8L28 4C28 3.74 27.95 3.48 27.85 3.23C27.75 2.99 27.6 2.77 27.41 2.59C27.23 2.4 27.01 2.25 26.77 2.15C26.52 2.05 26.26 2 26 2L6 2C5.74 2 5.48 2.05 5.23 2.15C4.99 2.25 4.77 2.4 4.59 2.59C4.4 2.77 4.25 2.99 4.15 3.23C4.05 3.48 4 3.74 4 4L4 8L6 8Z" />
+	<path id="_Transparent_Rectangle_" class="shp1" d="M0 0L32 0L32 32L0 32L0 0Z" />
+</svg>

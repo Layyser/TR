@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <link rel="icon" href="/Home/image1">
+    <link rel="stylesheet" type="text/css" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="replace-picture" id="replace-pic">
+        <form class="replace-pic1" method="POST" enctype="multipart/form-data" action="/change-pic">
+            <div class="title3">
+                <img src="svgs/28.svg" id="close0">
+                <h4>Foto de perfil</h4>
+            </div>
+            <h5>Rellena este campo y presiona guardar para cambiar tu foto de perfil</h5>
+            <label for="user">CAMBIA TU FOTO DE PERFIL</label>
+            <input id="replace-picture" type="file" accept="image/png, image/jpeg, image/gif" name="ProfileImage" required>
+            <div class="addflex1">
+                <div class="background-img" id="background-img">
+                    <div class="image-preview" id="imagePreview">
+                        <img src="svgs/36.svg" alt="Image Preview" class="image-preview__image"> 
+                    </div>
+                </div>
+
+                <div class="space"></div>
+                <a class="btn-cancel" id="close02">Cancelar</a>
+                <input id="send-picture" type="submit" class="btn-save" value="Guardar">
+                
+            </div>
+        </form>
+    </div>
+    <div id="replace-name" class="replace-name">
+        <form class="replace-name1">
+            <div class="title3">
+                <img src="svgs/28.svg" id="close1">
+                <h4>Nombre</h4>
+            </div>
+            <h5>Rellena este campo y presiona guardar para establecer un nuevo nombre</h5>
+            <label for="user">CAMBIA TU NOMBRE</label>
+            <input id="replace-user" type="text" autocomplete="off" required>
+            <div class="addflex">
+                <div class="space"></div>
+                <a class="btn-cancel" id="close12">Cancelar</a>
+                <input id="send-name" type="submit" class="btn-save" value="Guardar">
+            </div>
+        </form>
+    </div>
+    <div id="replace-bday" class="replace-bday">
+        <form class="replace-bday1">
+            <div class="title3">
+                <img src="svgs/28.svg" id="close2">
+                <h4>Cumpleaños</h4>
+            </div>
+            <h5>Rellena este campo y presiona guardar para cambiar tu fecha de cumpleaños</h5>
+            <label for="bday">CAMBIAR TU FECHA DE CUMPLEAÑOS</label>
+            <input id="agee" type="date" autocomplete="off" required>
+            <div class="addflex">
+                <div class="space"></div>
+                <a class="btn-cancel" id="close22">Cancelar</a>
+                <input id="send-bday" type="submit" class="btn-save" value="Guardar">
+            </div>
+        </form>
+    </div>
+    <div id="replace-gender" class="replace-gender">
+        <form class="replace-gender1">
+            <div class="title3">
+                <img src="svgs/28.svg" id="close3">
+                <h4>Género</h4>
+            </div>
+            <h5>Rellena este campo y presiona guardar para establecer un nuevo género</h5>
+            <label for="gender">CAMBIAR TU GÉNERO</label>
+            <select name="gender-select" id="gender-select" class="select-css">
+                <option value="Hombre" selected>Hombre</option>
+                <option value="Mujer">Mujer</option>
+                <option value="Otro">Otro</option>
+                <option value="Prefiero no decirlo">Prefiero no decirlo</option>
+            </select>
+            <div class="addflex">
+                <div class="space"></div>
+                <a class="btn-cancel" id="close32">Cancelar</a>
+                <input id="send-gender" type="submit" class="btn-save" value="Guardar">
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <header class="header">
+        <ul>
+            <li class="left-li"><a class="categories"><img src="svgs/25.svg"></a></li>
+            <li><a class="logo-padding" href="/home"><img class="logo" src="svgs/13.svg"></a></li>
+            <li><a class="mercasanvi" href="/home">MercaSanvi</a></li>
+            <li class="out-li"><a href="/cesta" class="inside-a">Cesta</a></li>
+            <li class="center-li"></li>
+            <li id="prof" class="out-li"><a href="/profile" class="inside-a-s">Perfil</a></li>
+            <li class="right-li" style="float:right"><a href="/lang" class="inside-a">Idioma</a></li>
+        </ul>
+    </header>
+    <div class="titulo">
+        <h1 id="titulo"></h1>
+    </div>
+    <div class="main-content">
+        <div class="basic-info">
+            <div class="in-basic-info">
+                <p class="title1">Información básica</p>
+                <p class="info1">Es posible que otros usuarios puedan ver parte de esta información</p>
+            </div>
+            <div class="picture" id="pic">
+                <h3 class="info2p">FOTO</h3>
+                <div class="info3p">Puedes personalizar tu cuenta con una foto</div>
+                <img class="prof-pic" id="prof-pic" src="svgs/34.svg">
+            </div>
+            <div class="username" id="use">
+                <h3>USUARIO</h3>
+                <div class="info3" id="username"></div>
+            </div>
+            <div class="full-name" id="nam">
+                <h3>NOMBRE</h3>
+                <div class="info3" id="realname"></div>
+                <img class="arrow" src="svgs/6.svg">
+            </div>
+            <div class="age" id="yea">
+                <h3>FECHA DE NACIMIENTO</h3>
+                <div class="info3" id="age"></div>
+                <img class="arrow" src="svgs/6.svg">
+            </div>
+            <div class="gender" id="gen">
+                <h3>SEXO</h3>
+                <div class="info3" id="gender"></div>
+                <img class="arrow" src="svgs/6.svg">
+            </div>
+            <div class="user-rating">
+                <h3>ESTRELLAS</h3>
+                <div class="info3" id="stars"></div>
+            </div>
+        </div>
+        <div class="contact-info">
+            <div class="in-contact-info">
+                <p class="title1">Información de contacto</p>
+                <p class="info1">Es la información privada con la que nos pondremos en contacto con usted</p>
+            </div>
+            <div class="e-mail">
+                <h3>EMAIL</h3>
+                <div class="info3" id="email"></div>
+            </div>
+            <div class="phone">
+                <h3>TELÉFONO</h3>
+                <div class="info3" id="phone"></div>
+            </div>
+        </div>
+        <div class="more">
+            <div class="in-more">
+                <p class="title1">¿Buscas otra cosa?</p>
+            </div>
+            <div class="faq">
+                <img src="svgs/29.svg" id="1" class="smaller">
+                <h2>Preguntas frecuentes</h2>
+                <img class="arrow" src="svgs/6.svg">
+            </div>
+            <div class="send-comment" id="2">
+                <img src="svgs/32.svg">
+                <h2>Envianos un comentario</h2>
+                <img class="arrow" src="svgs/6.svg">
+            </div>
+            <div class="back-home" id="3">
+                <img src="svgs/31.svg">
+                <h2><a href="/home">Vuelve a la página principal</a></h2>
+                <img class="arrow" src="svgs/6.svg">
+            </div>
+        </div>
+    </div>
+    <button class="btn-cancel2">
+        <a href="/logout">Cerrar sesión</a>
+    </button>
+    <script src="profile.js"></script>
+</body>
+</html>

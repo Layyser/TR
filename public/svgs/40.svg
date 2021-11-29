@@ -1,0 +1,39 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+	<title>edit-svg</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M0 0L1920 0L1920 1080L0 1080L0 0Z" />
+		</clipPath>
+		<radialGradient id="grd1" gradientUnits="userSpaceOnUse"  cx="1720.4" cy="189.6" r="1401.6">
+			<stop offset="0" stop-color="#107c10"  />
+			<stop offset="1" stop-color="#c4c4c4" stop-opacity="0" />
+		</radialGradient>
+		<radialGradient id="grd2" gradientUnits="userSpaceOnUse"  cx="298.6" cy="256.8" r="932.4">
+			<stop offset="0" stop-color="#ffb900" stop-opacity="0.75" />
+			<stop offset="1" stop-color="#c4c4c4" stop-opacity="0" />
+		</radialGradient>
+		<radialGradient id="grd3" gradientUnits="userSpaceOnUse"  cx="372.4" cy="907.6" r="1401.6">
+			<stop offset="0" stop-color="#107c10"  />
+			<stop offset="1" stop-color="#c4c4c4" stop-opacity="0" />
+		</radialGradient>
+		<radialGradient id="grd4" gradientUnits="userSpaceOnUse"  cx="1548.6" cy="952.8" r="932.4">
+			<stop offset="0" stop-color="#ffb900" stop-opacity="0.75" />
+			<stop offset="1" stop-color="#c4c4c4" stop-opacity="0" />
+		</radialGradient>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: url(#grd1) } 
+		.shp1 { fill: url(#grd2) } 
+		.shp2 { fill: url(#grd3) } 
+		.shp3 { fill: url(#grd4) } 
+	</style>
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<g id="Layer" style="opacity: 0.2">
+			<path id="Layer" class="shp0" d="M1720.4 1591.2C2670.77 1591.2 3441.2 963.68 3441.2 189.6C3441.2 -584.48 2670.77 -1212 1720.4 -1212C770.03 -1212 -0.4 -584.48 -0.4 189.6C-0.4 963.68 770.03 1591.2 1720.4 1591.2L1720.4 1591.2Z" />
+			<path id="Layer" class="shp1" d="M298.6 1189.2C930.52 1189.2 1442.8 771.75 1442.8 256.8C1442.8 -258.15 930.52 -675.6 298.6 -675.6C-333.32 -675.6 -845.6 -258.15 -845.6 256.8C-845.6 771.75 -333.32 1189.2 298.6 1189.2L298.6 1189.2Z" />
+			<path id="Layer copy" class="shp2" d="M372.4 2309.2C1322.77 2309.2 2093.2 1681.68 2093.2 907.6C2093.2 133.52 1322.77 -494 372.4 -494C-577.97 -494 -1348.4 133.52 -1348.4 907.6C-1348.4 1681.68 -577.97 2309.2 372.4 2309.2L372.4 2309.2Z" />
+			<path id="Layer copy 2" class="shp3" d="M1548.6 1885.2C2180.52 1885.2 2692.8 1467.75 2692.8 952.8C2692.8 437.85 2180.52 20.4 1548.6 20.4C916.68 20.4 404.4 437.85 404.4 952.8C404.4 1467.75 916.68 1885.2 1548.6 1885.2L1548.6 1885.2Z" />
+		</g>
+	</g>
+</svg>

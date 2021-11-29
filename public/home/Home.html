@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MercaSanvi</title>
+    <link rel="icon" href="/Home/image1">
+    <meta name="keywords" content="comprar, sanvi, san vicente, ">
+    <meta name="autor" content="Jorge Vico y Joan Moreno">
+    <meta name="copyright" content="Copyright:::">
+    <meta name="robots" content="index">
+    <meta name="robots" content="follow">
+    <link rel="stylesheet" type="text/css" href="Home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <script src="Home/slider"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body> 
+    <header>
+        <div class="center-li">      
+            <nav class="search-bar">
+            <!-- Barra de busqueda -->
+                <select class="selection" id="sel">
+                    <option selected="selected" value="search-alias=aps">Todas las categorías</option>
+                    <option value="search-alias=grocery">Alimentación</option>
+                    <option value="search-alias=baby">Bebé</option>
+                    <option value="search-alias=beauty">Belleza</option>
+                    <option value="search-alias=diy">Herramientas</option>>
+                    <option value="search-alias=vehicles">Mecánicos</option>
+                    <option value="search-alias=sporting">Deportes</option>
+                    <option value="search-alias=electronics">Electrónica</option>
+                    <option value="search-alias=luggage">Equipaje</option>
+                    <option value="search-alias=appliances">Electrodomésticos</option>
+                    <option value="search-alias=handmade">Artesanal</option>
+                    <option value="search-alias=kitchen">Hogar y cocina</option>
+                    <option value="search-alias=lighting">Iluminación</option>
+                    <option value="search-alias=computers">Informática</option>
+                    <option value="search-alias=mi">Música</option>
+                    <option value="search-alias=lawngarden">Jardín</option>
+                    <option value="search-alias=jewelry">Joyería</option>
+                    <option value="search-alias=toys">Juguetes y juegos</option>
+                    <option value="search-alias=stripbooks">Libros</option>
+                    <option value="search-alias=under-ten-dollars">Menos de 10€</option>
+                    <option value="search-alias=fashion">Moda</option>
+                    <option value="search-alias=office-products">Papelería</option>
+                    <option value="search-alias=dvd">Películas y TV</option>
+                    <option value="search-alias=pets">Mascotas</option>
+                    <option value="search-alias=apparel">Ropa y accesorios</option>
+                    <option value="search-alias=hpc">Cuidado personal</option>
+                    <option value="search-alias=videogames">Videojuegos</option>
+                </select>
+                <input class="search-text" id="input" type="search" autocomplete="off" spellcheck="false" placeholder="Escribe aquí para buscar..." aria-live="polite">
+                <button class="search-button" type="submit" name="Botón"><img class="search-button-img" src="svgs/17.svg"></button>
+            </nav>  
+        </div>
+        <ul>
+            <li class="left-li"><a class="categories"><img src="svgs/25.svg"></a></li>
+            <li><a class="logo-padding" href="/home"><img class="logo" src="svgs/13.svg"></a></li>
+            <li><a class="mercasanvi" href="/home">MercaSanvi</a></li>
+            <li class="out-li"><a href="/cesta" class="inside-a">Cesta</a></li>
+            <li class="center-space"></li>
+            <li class="out-li"><a class="upload" id="upload-button" href="/upload" style="display: none"><img src="svgs/33.svg"></a></li>
+            <li class="out-li"><a class="login" id="login-button" href="/login">Iniciar sesión</a></li>
+            <li id="prof" class="out-li" style="display: none"><a href="/profile" class="inside-a">Perfil</a></li>
+            <li class="right-li" style="float:right"><a href="/lang" class="inside-a">Idioma</a></li>
+        </ul>
+    </header>
+    <main>
+        
+        <div class="slideshow-container" id="panel">
+            <div class="mySlides fade" style="display: block">
+                <img class="carousel-image" src="/Home/carousel/1">
+            </div>
+          
+            <div class="mySlides fade" style="display: none">
+                <img class="carousel-image" src="/Home/carousel/2">
+            </div>
+          
+            <div class="mySlides fade" style="display: none">
+                <img class="carousel-image" src="/Home/carousel/3">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <div class="carousel-gradient"></div>
+        </div>
+        <div class="carousel-nav-dot">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <div class="mid-panel">     
+            <div class="separe-boxes">
+                <div class="selling-box">
+                    <!-- Caja Mejor valorados -->
+                    <header>
+                        <!-- Titulo mejor valorados -->
+                        <img src="svgs/19.svg">
+                        <h3><a href="">Mejor valorados</a></h3>
+                    </header>
+                    <div class="container">
+                        <!-- Imagenes + Mejor valorados -->
+                    </div>
+                </div>
+                <div class="selling-box">
+                            <!-- Caja Novedades -->
+                    <header>
+                        <img src="svgs/1.svg">
+                        <h3><a href="">Novedades</a></h3>
+                    </header>
+                    <div class="container">
+                            <!-- Imagenes + novedades -->
+                    </div>
+                </div>
+            </div>
+            <div class="separe-boxes">
+                <div class="selling-box">
+                    <!-- Caja Mejor valorados -->
+                    <header>
+                        <!-- Titulo mejor valorados -->
+                        <img src="svgs/11.svg">
+                        <h3><a href="">Mas vendidos</a></h3>
+                    </header>
+                    <div class="container">
+                        <!-- Imagenes + Mejor valorados -->
+
+                    </div>
+
+                </div>
+
+                <div class="selling-box">
+                    <!-- Caja Novedades -->
+                    <header>
+                        <img class="percentage" src="svgs/14.svg">
+                        <h3><a href="">Ofertas</a></h3>
+                    </header>
+                    <div class="container">
+                        <!-- Imagenes + novedades -->
+
+                    </div>
+                </div>
+            </div>
+            <div class="shops">
+                <!-- Caja tiendas colaboradoras -->
+                <header>
+                    <!-- Titulo tiendas colaboradoras -->
+                    <img src="svgs/23.svg">
+                    <h3>Tiendas colaboradoras</h3>
+                </header>
+                <div>
+                    <div class="shops-table">
+                        <!-- Tabla con imagenes de las tiendas colaboradoras -->
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">                        
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                        <img src="shops/shop.png" alt="Logo de (tienda)" title="nombre de la tienda">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cuerpo de la página -->      
+        
+        
+    </main>
+    <aside>
+        <!-- Poner panel lateral? -->
+    </aside>
+    <footer>
+        <div class="load-items">
+            <div>
+
+            </div>
+            <div class="marco">
+                <div class="button-select">
+                    <button class="boton-productos">Ver más productos</button>
+                    <p id="register">¿Eres un cliente nuevo? <a href="register">Registrate aquí</a></p>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <div class="second-content"> 
+            <div class="first-divs">
+                <!-- Apartado 1 --> 
+                <h4>No te olvides de seguirnos en:</h4>
+                <a href="https://whatsapp.com"><img src="svgs/22.svg" alt="Whatsapp" title="Whatsapp de MercaSanvi"></a>
+                <a href="https://www.instagram.com"><img src="svgs/12.svg" alt="Instagram" title="Instagram de MercaSanvi"></a>
+                <a href="https://twitter.com"><img src="svgs/21.svg" alt="Twitter" title="Twitter de MercaSanvi"></a>
+                <a href="https://web.telegram.org"><img src="svgs/20.svg" alt="Telegram" title="Telegram de MercaSanvi"></a>
+                <a href="https://www.facebook.com"><img src="svgs/10.svg" alt="Facebook" title="Facebook de MercaSanvi"></a>
+            </div>
+            <div class="space"></div>
+            <div class="first-divs">
+                <!-- Apartado 2 -->
+                <h4>Guía de compra:</h4>
+                <a href="">Crear una cuenta</a>
+                <br>
+                <a href="">Guía para nuevos usuarios</a>
+                <br>
+                <a href="">Protección del comprador</a>
+                <br>
+                <a href="">Pago</a>
+                <br>
+                <a href="">Envío</a>
+            </div>
+            <div class="space"></div>
+            <div class="first-divs">
+                <!-- Apartado 3 -->
+                
+                <h4>Atención al cliente:</h4>
+                <a href="">Atención al cliente</a>
+                <br>
+                <a href="">Acuerdo de Servicios de Transacciones</a>
+                <br>
+                <a href="">Encuesta de satisfacción</a>
+            </div>
+            <div class="space"></div>
+            <div class="first-divs">
+                <!-- Apartado 4 -->
+                
+                <h4>Colabora con nosotros:</h4>       
+                <a href="">Colaboraciones</a>
+                <br>
+                <a href="">Programa de afiliados</a>  
+            </div>
+        </div>
+        <div class="gray-footer">
+            <h3>Web dirigida por</h3>
+            <div class="gray-footer-imgs">
+                <img src="svgs/27.svg" alt="Logo MercaSanvi" title="MercaSanvi" class="smaller-img">
+                <a href="http://www.svh.cat/"> <img src="/Home/image2" alt="Ajuntament de Sant Vicenç dels Horts" title="Ajuntament de Sant Vicenç dels Horts"></a>   
+            </div>
+                    
+        </div>
+        <div class="black-footer">
+            <a href="../">Área legal</a> 
+            <a href="../">Condiciones de uso y venta</a>     
+            <a href="../">© 2021 Todos los derechos reservados</a>
+            <a href="../">Aviso de privacidad</a> 
+            <a href="../">Cookies</a>          
+        </div>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>

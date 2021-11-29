@@ -1,0 +1,19 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+	<title>34-svg</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="M300 580C145.16 580 20 454.84 20 300C20 145.16 145.16 20 300 20C454.84 20 580 145.16 580 300C580 454.84 454.84 580 300 580Z" />
+		</clipPath>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #5f6368 } 
+		.shp1 { fill: #ffffff } 
+	</style>
+	<path id="Layer" class="shp0" d="M300 576C145.16 576 20 450.84 20 296C20 141.16 145.16 16 300 16C454.84 16 580 141.16 580 296C580 450.84 454.84 576 300 576Z" />
+	<path id="Shape 1" class="shp0" d="M703 308" />
+	<path id="Layer" class="shp1" d="M300 345C236.41 345 185 293.6 185 230C185 166.41 236.41 115 300 115C363.6 115 415 166.41 415 230C415 293.6 363.6 345 300 345Z" />
+	<g id="Clip-Path" clip-path="url(#cp1)">
+		<path id="Layer" class="shp1" d="M300 755C186.63 755 95 663.37 95 550C95 436.63 186.63 345 300 345C413.37 345 505 436.63 505 550C505 663.37 413.37 755 300 755Z" />
+	</g>
+</svg>

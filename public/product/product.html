@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Producto</title>
+    <link rel="stylesheet" type="text/css" href="../product.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="icon" href="/Home/image1">
+</head>
+<body>
+    <header>
+        <div class="center-li">      
+            <nav class="search-bar">
+            <!-- Barra de busqueda -->
+                <select class="selection" id="sel">
+                    <option selected="selected" value="search-alias=aps">Todas las categorías</option>
+                    <option value="search-alias=grocery">Alimentación</option>
+                    <option value="search-alias=baby">Bebé</option>
+                    <option value="search-alias=beauty">Belleza</option>
+                    <option value="search-alias=diy">Herramientas</option>>
+                    <option value="search-alias=vehicles">Mecánicos</option>
+                    <option value="search-alias=sporting">Deportes</option>
+                    <option value="search-alias=electronics">Electrónica</option>
+                    <option value="search-alias=luggage">Equipaje</option>
+                    <option value="search-alias=appliances">Electrodomésticos</option>
+                    <option value="search-alias=handmade">Artesanal</option>
+                    <option value="search-alias=kitchen">Hogar y cocina</option>
+                    <option value="search-alias=lighting">Iluminación</option>
+                    <option value="search-alias=computers">Informática</option>
+                    <option value="search-alias=mi">Música</option>
+                    <option value="search-alias=lawngarden">Jardín</option>
+                    <option value="search-alias=jewelry">Joyería</option>
+                    <option value="search-alias=toys">Juguetes y juegos</option>
+                    <option value="search-alias=stripbooks">Libros</option>
+                    <option value="search-alias=under-ten-dollars">Menos de 10€</option>
+                    <option value="search-alias=fashion">Moda</option>
+                    <option value="search-alias=office-products">Papelería</option>
+                    <option value="search-alias=dvd">Películas y TV</option>
+                    <option value="search-alias=pets">Mascotas</option>
+                    <option value="search-alias=apparel">Ropa y accesorios</option>
+                    <option value="search-alias=hpc">Cuidado personal</option>
+                    <option value="search-alias=videogames">Videojuegos</option>
+                </select>
+                <input class="search-text" id="input" type="search" autocomplete="off" spellcheck="false" placeholder="Escribe aquí para buscar..." aria-live="polite">
+                <button class="search-button" type="submit" name="Botón"><img class="search-button-img" src="../svgs/17.svg"></button>
+            </nav>  
+        </div>
+        <ul>
+            <li class="left-li"><a class="categories"><img src="../svgs/25.svg"></a></li>
+            <li><a class="logo-padding" href="/home"><img class="logo" src="../svgs/13.svg"></a></li>
+            <li><a class="mercasanvi" href="/home">MercaSanvi</a></li>
+            <li class="out-li"><a href="/cesta" class="inside-a">Cesta</a></li>
+            <li class="center-space"></li>
+            <li class="out-li"><a class="upload" id="upload-button" href="/upload" style="display: none"><img src="../svgs/33.svg"></a></li>
+            <li class="out-li"><a class="login" id="login-button" href="/login">Iniciar sesión</a></li>
+            <li id="prof" class="out-li" style="display: none"><a href="/profile" class="inside-a">Perfil</a></li>
+            <li class="right-li" style="float:right"><a href="/lang" class="inside-a">Idioma</a></li>
+        </ul>
+    </header>
+
+
+
+
+    <div class="block1">
+        <div class="raw1">
+            <div>
+                <h3 id="titulo"></h3>
+            </div>
+            <div>
+                <h4>Categoría</h4>
+                <div id="searchAlias"></div>                
+            </div>
+        </div>
+        <div class="raw2">
+            <div class="slideshow-container" id="panel">
+                <div class="mySlides fade" style="display: block" id="slidesbox1">
+                    <img class="carousel-image" id="image1" src="">
+                </div>
+              
+                <div class="mySlides fade" style="display: none" id="slidesbox2">
+                    <img class="carousel-image" id="image2" src="">
+                </div>
+              
+                <div class="mySlides fade" style="display: none" id="slidesbox3">
+                    <img class="carousel-image" id="image3" src="">
+                </div>
+        
+                <div class="mySlides fade" style="display: none" id="slidesbox4">
+                    <img class="carousel-image" id="image4" src="">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="carousel-nav-dot">
+                    <span class="dot active" id="dot1" onclick="currentSlide(1)"></span>
+                    <span class="dot" id="dot2" onclick="currentSlide(2)"></span>
+                    <span class="dot" id="dot3" onclick="currentSlide(3)"></span>
+                    <span class="dot" id="dot4" onclick="currentSlide(4)"></span>
+                </div>
+            </div>         
+            <div class="variety">
+                <h4>Tamaños</h4>
+                <div class="sizes-box" style="display: grid" id="sizes-box">
+                    <input type="checkbox" class="size-box" name="s-size" id="small" style="display: none"/>
+                    <input type="checkbox" class="size-box" name="s-size" id="medium" style="display: none"/>
+                    <input type="checkbox" class="size-box" name="s-size" id="large" style="display: none"/>
+                    <input type="checkbox" class="size-box" name="s-size" id="x-large" style="display: none"/>
+                    <input type="checkbox" class="size-box" name="s-size" id="xx-large" style="display: none"/>
+                  
+                    <label class="size-label" id="small1" for="small" style="display: none">S</label>
+                    <label class="size-label" id="medium1" for="medium" style="display: none">M</label>
+                    <label class="size-label" id="large1" for="large" style="display: none">L</label>
+                    <label class="size-label" id="x-large1" for="x-large" style="display: none">XL</label>
+                    <label class="size-label" id="xx-large1" for="xx-large" style="display: none">XXL</label>
+                </div>
+                <h4>Colores</h4>
+                <div class="colors-palette" id="colors-palette">
+                    <input type="checkbox" id="color1" class="white-color" style="display: none">
+                    <input type="checkbox" id="color2" class="gray-color" style="display: none">
+                    <input type="checkbox" id="color3" class="black-color" style="display: none">
+                    <input type="checkbox" id="color4" class="lime-color" style="display: none">
+                    <input type="checkbox" id="color5" class="green-color" style="display: none">
+                    <input type="checkbox" id="color6" class="turquoise-color" style="display: none">
+                    <input type="checkbox" id="color7" class="lightblue-color" style="display: none">
+                    <input type="checkbox" id="color8" class="blue-color" style="display: none">
+                    <input type="checkbox" id="color9" class="purple-color" style="display: none">
+                    <input type="checkbox" id="color10" class="pink-color" style="display: none">
+                    <input type="checkbox" id="color11" class="red-color" style="display: none">
+                    <input type="checkbox" id="color12" class="orange-color" style="display: none">
+                    <input type="checkbox" id="color13" class="yellow-color" style="display: none">
+                    <input type="checkbox" id="color14" class="golden-color" style="display: none">
+                    <input type="checkbox" id="color15" class="brown-color" style="display: none">
+                </div>                  
+            </div>
+        </div>
+        <div class="raw3">
+            <h4>Precio</h4>
+            <div id="price"></div>
+
+            <h4>Unidades</h4>
+            <div id="units"></div>
+        </div>
+    </div>
+    <div class="block2">
+        <h4>Descripción</h4>
+        <div id="description"></div>
+    
+        <h4>Palabras clave</h4>
+        <ul class="keywords">
+            <li class="keywords-li" id="keyword1"></li>
+            <li class="keywords-li" id="keyword2"></li>
+            <li class="keywords-li" id="keyword3"></li>
+            <li class="keywords-li" id="keyword4"></li>
+            <li class="keywords-li" id="keyword5"></li>
+            <li class="keywords-li" id="keyword6"></li>
+        </ul>
+    
+        <h4>Más detalles</h4>
+        <div id="details"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../Home/slider"></script>
+    <script src="../product.js"></script>
+</body>
+</html>
