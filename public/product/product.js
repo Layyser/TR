@@ -4,6 +4,7 @@ const botonLogin = document.getElementById("login-button");
 const botonMas = document.getElementById("register");
 const botonProfile = document.getElementById("prof");
 const botonUpload = document.getElementById("upload-button");
+const botonCesta = document.getElementById("cesta-button");
 
 axios.post("/home",{
     
@@ -14,10 +15,12 @@ axios.post("/home",{
         botonLogin.classList.remove('login');
         botonLogin.innerHTML = response.data.name;
         botonMas.parentNode.removeChild(botonMas);
+        botonCesta.style.display = "block";
     }
     else {
         console.log('Inicia sesión para disfrutar de la web');
         botonProfile.parentNode.removeChild(botonProfile);
+        botonCesta.style.display = "none";
     }
 });
 
@@ -29,10 +32,12 @@ axios.post("/check-if-admin",{
     if (response.data.admin == 1){
         botonUpload.style.display = "block";
         botonProfile.style.display = "block";
+        botonCesta.style.display = "block";
     }
     else {
         botonUpload.style.display = "none";
         botonProfile.style.display = "block";
+
     }
 });
 
@@ -126,6 +131,7 @@ var id = url.substring(url.lastIndexOf('/') + 1);
 axios.post("/request-products-data",{
     "id" : id
 }).then((response)=>{
+    console.log(response);
     title.innerHTML = `${response.data[0].productname} - MercaSanvi`;
     titulo.innerHTML = response.data[0].productname;
     searchAlias.innerHTML = response.data[0].searchalias;
@@ -293,7 +299,7 @@ axios.post("/request-products-data",{
         slidesbox4.remove();
     }
 
-    description.innerHTML = response.data[0].description;
+    description.innerHTML = response.data[0].dsription;
     let keyword = response.data[0].keywords.split(".");
     keyword1.innerHTML = keyword[0];
     keyword2.innerHTML = keyword[1];
@@ -312,245 +318,119 @@ axios.post("/request-products-data",{
 // AUTO UNCHECK
 
 
+
+
 color1.addEventListener ("click", (e)=>{
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
+    for (let i = 2; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
 });
 color2.addEventListener ("click", (e)=>{
+    for (let i = 3; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
     color1.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
 });
 color3.addEventListener ("click", (e)=>{
+
+    for (let i = 4; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
     color1.checked = false;
     color2.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
 });
 color4.addEventListener ("click", (e)=>{
+    for (let i = 5; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
     color1.checked = false;
     color2.checked = false;
     color3.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
 });
 color5.addEventListener ("click", (e)=>{
+    for (let i = 6; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
     color1.checked = false;
     color2.checked = false;
     color3.checked = false;
     color4.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
 });
 color6.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
+    for (let i = 7; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
+    for (let i = 1; i < 6 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
 });
 color7.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
+
+    for (let i = 8; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
+    for (let i = 1; i < 7 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
 });
 color8.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
+
+    for (let i = 9; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
+    for (let i = 1; i < 8 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
 });
 color9.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
+    for (let i = 10; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
+    for (let i = 1; i < 9 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
 });
 color10.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
+    for (let i = 11; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
+    for (let i = 1; i < 10 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
 });
 color11.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
-    color15.checked = false;
+    for (let i = 12; i < 16 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
+    for (let i = 1; i < 11 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
 });
 color12.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
+    for (let i = 1; i < 12 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
     color13.checked = false;
     color14.checked = false;
     color15.checked = false;
 });
 color13.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
+    for (let i = 1; i < 13 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
     color14.checked = false;
     color15.checked = false;
 });
 color14.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
+    for (let i = 1; i < 14 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
     color15.checked = false;
 });
 color15.addEventListener ("click", (e)=>{
-    color1.checked = false;
-    color2.checked = false;
-    color3.checked = false;
-    color4.checked = false;
-    color5.checked = false;
-    color6.checked = false;
-    color7.checked = false;
-    color8.checked = false;
-    color9.checked = false;
-    color10.checked = false;
-    color11.checked = false;
-    color12.checked = false;
-    color13.checked = false;
-    color14.checked = false;
+    for (let i = 1; i < 15 ; i++) {
+        document.getElementById(`color${i}`).checked = false;
+    }
 });
 
 small.addEventListener ("click", (e)=>{
@@ -585,3 +465,22 @@ xxlarge.addEventListener ("click", (e)=>{
 });
 
 // SIMPLIFICAR
+
+
+//añadir al carrito
+
+const añadirCarrito = document.getElementById("añadircesta")
+var currentUrl = window.location.href;
+console.log(currentUrl);
+splitUrl = currentUrl.split("/");
+
+añadirCarrito.addEventListener("click", (e)=>{
+
+    axios.post("/add-to-cart",{
+        "product" : splitUrl[4]
+    })
+});
+
+
+// pa la cesta
+

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MercaSanvi</title>
+    <title>MercaSanvi - Página principal</title>
     <link rel="icon" href="/Home/image1">
     <meta name="keywords" content="comprar, sanvi, san vicente, ">
     <meta name="autor" content="Jorge Vico y Joan Moreno">
@@ -14,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="Home.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <script src="Home/slider"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body> 
@@ -27,7 +26,7 @@
                     <option value="search-alias=grocery">Alimentación</option>
                     <option value="search-alias=baby">Bebé</option>
                     <option value="search-alias=beauty">Belleza</option>
-                    <option value="search-alias=diy">Herramientas</option>>
+                    <option value="search-alias=diy">Herramientas</option>
                     <option value="search-alias=vehicles">Mecánicos</option>
                     <option value="search-alias=sporting">Deportes</option>
                     <option value="search-alias=electronics">Electrónica</option>
@@ -51,15 +50,15 @@
                     <option value="search-alias=hpc">Cuidado personal</option>
                     <option value="search-alias=videogames">Videojuegos</option>
                 </select>
-                <input class="search-text" id="input" type="search" autocomplete="off" spellcheck="false" placeholder="Escribe aquí para buscar..." aria-live="polite">
-                <button class="search-button" type="submit" name="Botón"><img class="search-button-img" src="svgs/17.svg"></button>
+                <input class="search-text" id="inputsearch" type="search" autocomplete="off" spellcheck="false" placeholder="Escribe aquí para buscar..." aria-live="polite">
+                <button class="search-button" type="submit" name="Botón" id="inputsubmitsearch"><img class="search-button-img" src="svgs/17.svg"></button>
             </nav>  
         </div>
         <ul>
             <li class="left-li"><a class="categories"><img src="svgs/25.svg"></a></li>
             <li><a class="logo-padding" href="/home"><img class="logo" src="svgs/13.svg"></a></li>
             <li><a class="mercasanvi" href="/home">MercaSanvi</a></li>
-            <li class="out-li"><a href="/cesta" class="inside-a">Cesta</a></li>
+            <li class="out-li"><a href="/cart" class="inside-a" id="cesta-button" style="display: none">Cesta</a></li>
             <li class="center-space"></li>
             <li class="out-li"><a class="upload" id="upload-button" href="/upload" style="display: none"><img src="svgs/33.svg"></a></li>
             <li class="out-li"><a class="login" id="login-button" href="/login">Iniciar sesión</a></li>
@@ -71,7 +70,7 @@
         
         <div class="slideshow-container" id="panel">
             <div class="mySlides fade" style="display: block">
-                <img class="carousel-image" src="/Home/carousel/1">
+                <img class="carousel-image" src="/Home/carousel/3">
             </div>
           
             <div class="mySlides fade" style="display: none">
@@ -79,7 +78,7 @@
             </div>
           
             <div class="mySlides fade" style="display: none">
-                <img class="carousel-image" src="/Home/carousel/3">
+                <img class="carousel-image" src="/Home/carousel/1">
             </div>
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -100,8 +99,27 @@
                         <img src="svgs/19.svg">
                         <h3><a href="">Mejor valorados</a></h3>
                     </header>
-                    <div class="container">
-                        <!-- Imagenes + Mejor valorados -->
+                    <div class="container"> 
+                        <a class="box" href="" id="1" style="display: grid">
+                            <div class="box2" id="title1">Title</div>
+                            <div class="box1"><img id="img1" src=""></div>
+                            <div class="box2" id="price1">Price</div>  
+                        </a>
+                        <a class="box" href=""  id="2" style="display: grid">
+                            <div class="box2" id="title2">Title</div>
+                            <div class="box1"><img id="img2" src=""></div>
+                            <div class="box2" id="price2">Price</div>  
+                        </a>
+                        <a class="box" href="" id="3" style="display: grid">
+                            <div class="box2" id="title3">Title</div>
+                            <div class="box1"><img id="img3" src=""></div>
+                            <div class="box2" id="price3">Price</div>  
+                        </a>
+                        <a class="box" href="" id="4" style="display: grid">
+                            <div class="box2" id="title4">Title</div>
+                            <div class="box1"><img id="img4" src=""></div>
+                            <div class="box2" id="price4">Price</div>  
+                        </a>
                     </div>
                 </div>
                 <div class="selling-box">
@@ -111,7 +129,26 @@
                         <h3><a href="">Novedades</a></h3>
                     </header>
                     <div class="container">
-                            <!-- Imagenes + novedades -->
+                        <a class="box" href="" id="5" style="display: grid">
+                            <div class="box2" id="title5">Title</div>
+                            <div class="box1"><img id="img5" src=""></div>
+                            <div class="box2" id="price5">Price</div>  
+                        </a>
+                        <a class="box" href=""  id="6" style="display: grid">
+                            <div class="box2" id="title6">Title</div>
+                            <div class="box1"><img id="img6" src=""></div>
+                            <div class="box2" id="price6">Price</div>  
+                        </a>
+                        <a class="box" href="" id="7" style="display: grid">
+                            <div class="box2" id="title7">Title</div>
+                            <div class="box1"><img id="img7" src=""></div>
+                            <div class="box2" id="price7">Price</div>  
+                        </a>
+                        <a class="box" href="" id="8" style="display: grid">
+                            <div class="box2" id="title8">Title</div>
+                            <div class="box1"><img id="img8" src=""></div>
+                            <div class="box2" id="price8">Price</div>  
+                        </a>
                     </div>
                 </div>
             </div>
@@ -124,7 +161,26 @@
                         <h3><a href="">Mas vendidos</a></h3>
                     </header>
                     <div class="container">
-                        <!-- Imagenes + Mejor valorados -->
+                        <a class="box" href="" id="9" style="display: grid">
+                            <div class="box2" id="title9">Title</div>
+                            <img id="img9" src="">
+                            <div class="box2" id="price9">Price</div>  
+                        </a>
+                        <a class="box" href=""  id="10" style="display: grid">
+                            <div class="box2" id="title10">Title</div>
+                            <div class="box1"><img id="img10" src=""></div>
+                            <div class="box2" id="price10">Price</div>  
+                        </a>
+                        <a class="box" href="" id="11" style="display: grid">
+                            <div class="box2" id="title11">Title</div>
+                            <div class="box1"><img id="img11" src=""></div>
+                            <div class="box2" id="price11">Price</div>  
+                        </a>
+                        <a class="box" href="" id="12" style="display: grid">
+                            <div class="box2" id="title12">Title</div>
+                            <div class="box1"><img id="img12" src=""></div>
+                            <div class="box2" id="price12">Price</div>  
+                        </a>
 
                     </div>
 
@@ -186,7 +242,7 @@
             </div>
             <div class="marco">
                 <div class="button-select">
-                    <button class="boton-productos">Ver más productos</button>
+                    <button class="boton-productos" id="but2">Ver más productos</button>
                     <p id="register">¿Eres un cliente nuevo? <a href="register">Registrate aquí</a></p>
                 </div>
             </div>
@@ -256,5 +312,8 @@
         </div>
     </footer>
     <script src="home.js"></script>
+    <script src="home2.js"></script>
+    <script src="search.js"></script>
+    <script src="home/slider.js"></script>
 </body>
 </html>

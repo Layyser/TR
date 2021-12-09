@@ -267,7 +267,7 @@ app.post('/register', async (request, response)=>{
                 if(results == '') {
                     let sql = `INSERT INTO users_table (user, name, email, age, gender, pass, admin) VALUES ('${user}', '${name}', '${email}', '${age}', '${gender}', '${passwordHash}', '0')`;
                     conexion.query(sql, (error, results)=> {
-                        console.log('hola');
+                        console.log(error);
                     })
                     response.send('OK');
                 }
@@ -294,13 +294,13 @@ app.post('/auth', async (request, response) => {
         let askUsersPasswords = `SELECT user, pass FROM users_table WHERE user='${user}'`;          
         conexion.query(askUsersPasswords, function (error, results) {     
             if(results == 'undefined'){
-                console.log('No se ha iniciado sesion')
+                console.log('No se ha iniciado sesión')
             }
             if (results.length == 0 || passwordHash != results[0].pass){
-                console.log('No se ha iniciado sesion');
+                console.log('No se ha iniciado sesión');
             }
             else{
-                console.log('Iniciar sesion');
+                console.log('Sesión iniciada');
                 request.session.loggedIn = true;
                 request.session.name = user;
                 console.log(request.session);
@@ -347,14 +347,17 @@ app.post('/test', function (req, res) {
 
 // LOAD HOME
 
-app.get('/Home.css', (request, response) => {
+app.get('/home.css', (request, response) => {
     response.sendFile(__dirname+'/public/home/home.css'); 
 });
-app.get('/Home', (request, response) => {   
+app.get('/home', (request, response) => {   
     response.sendFile(__dirname+'/public/home/home.html');
 });
-app.get('/Home.js', (request, response) => {   
+app.get('/home.js', (request, response) => {   
     response.sendFile(__dirname+'/public/home/home.js');  
+});
+app.get('/home2.js', (request, response) => {   
+    response.sendFile(__dirname+'/public/home/home2.js');  
 });
 app.post('/home', (request, response) => {
     console.log(request.session);
@@ -374,10 +377,10 @@ app.post('/check-if-admin', (request, response) => {
 
 
 // LOAD HOME IMAGES
-app.get('/Home/image1', function (req, res) {
+app.get('/home/image1', function (req, res) {
     res.sendFile(__dirname+'/public/home/images/image1.png');
 });
-app.get('/Home/image2', function (req, res) {
+app.get('/home/image2', function (req, res) {
     res.sendFile(__dirname+'/public/home/images/image2.png');
 });
 
@@ -388,11 +391,11 @@ app.get('/Home/image2', function (req, res) {
 
 const jpgSuffix = '.jpg'
 
-app.get('/Home/carousel/:id', function(request, response) {
+app.get('/home/carousel/:id', function(request, response) {
     response.sendFile(__dirname+'/public/home/images/banner-image'+request.params.id+jpgSuffix);
 });
 
-app.get('/Home/slider', function(request, response) {
+app.get('/home/slider.js', function(request, response) {
     response.sendFile(__dirname+'/public/home/slider.js')
 });
 
@@ -586,7 +589,8 @@ app.post('/upload-product', async (request, response)=>{
     const desc = request.body.desc;
     const keywords = request.body.keywords;
     const details = request.body.details;
-
+    let today = new Date()
+    let date = `${today.getFullYear()}-${(today.getMonth()+1)}-${today.getDate()}`
     
     console.log({productname:productname, searchalias:searchAlias, colors:colors, sizes:sizes, price:price, units:units, desc:desc, keywords:keywords, details:details});
 
@@ -596,7 +600,7 @@ app.post('/upload-product', async (request, response)=>{
     desc != '' &&
     details != '')
     {
-        var pet = `INSERT INTO products_table (productname, searchalias, colors, sizes, price, units, image1, image2, image3, image4, description, keywords, details) VALUES ('${productname}', '${searchAlias}', '${colors}', '${sizes}', '${price}', '${units}', '0', '0', '0', '0', '${desc}', '${keywords}', '${details}')`;
+        var pet = `INSERT INTO products_table (productname, searchalias, colors, sizes, price, units, image1, image2, image3, image4, dsription, keywords, details, dy) VALUES ('${productname}', '${searchAlias}', '${colors}', '${sizes}', '${price}', '${units}', '0', '0', '0', '0', '${desc}', '${keywords}', '${details}', '${date}')`;
         console.log(pet);
         conexion.query(pet, (error, results)=> {
             console.log('Enviados los datos');
@@ -626,7 +630,7 @@ app.post('/upload-images2', async (request, response)=>{
 
 
     if (productname != '' &&
-    image2 != '')
+    image2 != '' && image2 != 'https://192.168.0.12/svgs/36.svg')
     {
         let pet2 = `UPDATE products_table SET image2='${image2}' WHERE productname='${productname}'`
         // console.log(pet2);
@@ -642,7 +646,7 @@ app.post('/upload-images3', async (request, response)=>{
     const image3 = request.body.image3;
 
     if (productname != '' &&
-    image3 != '')
+    image3 != '' && image3 != 'https://192.168.0.12/svgs/36.svg')
     {
         let pet3 = `UPDATE products_table SET image3='${image3}' WHERE productname='${productname}'`
         // console.log(pet3);
@@ -658,7 +662,7 @@ app.post('/upload-images4', async (request, response)=>{
     const image4 = request.body.image4;
 
     if (productname != '' &&
-    image4 != '')
+    image4 != '' && image4 != 'https://192.168.0.12/svgs/36.svg')
     {
         let pet4 = `UPDATE products_table SET image4='${image4}' WHERE productname='${productname}'`
         // console.log(pet4);
@@ -671,6 +675,52 @@ app.post('/upload-images4', async (request, response)=>{
 
 
 
+// SEARCH
+
+app.get('/s', (request, response) => {   
+    response.sendFile(__dirname+'/public/search/search.html');
+});
+app.get('/s/:id', (request, response) => {   
+    response.sendFile(__dirname+'/public/search/search.html');
+}); 
+app.get('/s/search-alias=*/:id', (request, response) => {   
+    response.sendFile(__dirname+'/public/search/search.html');
+}); 
+app.get('/search.js', (request, response) => {   
+    response.sendFile(__dirname+'/public/search/search.js');  
+});
+
+
+// LOAD
+
+app.get('/load.js', (request, response) => {   
+    response.sendFile(__dirname+'/public/search/load.js');  
+});
+
+app.post('/loaditems', async (request, response) => {
+    let searchKeyword = request.body.search
+    let searchAlias = request.body.searchAlias
+    if (searchAlias != "search-alias=aps"){
+        let askAliasMatch = `SELECT productname, price, image1, id FROM products_table WHERE searchalias='${searchAlias}' AND keywords LIKE '%${searchKeyword}%'`
+        conexion.query(askAliasMatch, function (error, results){
+            console.log(results);
+            response.send(results);
+            
+        });
+    }
+    else {
+        let askAliasMatch = `SELECT productname, price, image1, id FROM products_table WHERE keywords LIKE '%${searchKeyword}%'`
+        conexion.query(askAliasMatch, function (error, results){
+            console.log(results);
+            response.send(results);
+            
+        });
+    }
+    
+
+
+});
+
 
 
 
@@ -678,6 +728,7 @@ app.post('/upload-images4', async (request, response)=>{
 app.get("/product/:id", (request, response) => {
     response.sendFile(__dirname+'/public/product/product.html');
 });
+
 app.get('/product.js', (request, response) => {   
     response.sendFile(__dirname+'/public/product/product.js');  
 });
@@ -688,8 +739,32 @@ app.get("/product.css", (request, response) => {
 app.post('/request-products-data', (request, response) => {
     const id = request.body.id
     console.log(id);
-    let askProductsData = `SELECT productname, searchalias, colors, sizes, price, units, image1, image2, image3, image4, description, keywords, details FROM products_table WHERE id='${id}'`
+    let askProductsData = `SELECT productname, searchalias, colors, sizes, price, units, image1, image2, image3, image4, dsription, keywords, details FROM products_table WHERE id='${id}'`
     conexion.query(askProductsData, function (error, results) {     
+        response.send(results);
+    })
+});
+
+app.post('/best-valued', (request, response) => {
+    let askForBestValued = `SELECT productname, price, image1, id FROM products_table ORDER BY rate DESC LIMIT 4`
+    console.log(askForBestValued);
+    conexion.query(askForBestValued, function (error, results) {     
+        response.send(results)
+    })
+});
+
+app.post('/new', (request, response) => {
+    let askForBestValued = `SELECT productname, price, image1, id FROM products_table ORDER BY dy DESC LIMIT 4`
+    console.log(askForBestValued);
+    conexion.query(askForBestValued, function (error, results) {     
+        response.send(results);
+    })
+});
+
+app.post('/best-selled', (request, response) => {
+    let askForBestValued = `SELECT productname, price, image1, id FROM products_table ORDER BY sold DESC LIMIT 4`
+    console.log(askForBestValued);
+    conexion.query(askForBestValued, function (error, results) {     
         response.send(results);
     })
 });
@@ -697,7 +772,58 @@ app.post('/request-products-data', (request, response) => {
 
 
 
+// Cesta
 
+app.get("/cart", (request, response) => {
+    response.sendFile(__dirname+'/public/cesta/cesta.html');
+})
+app.get("/cesta.js", (request, response) => {
+    response.sendFile(__dirname+'/public/cesta/cesta.js');
+})
+app.get("/search.css", (request, response) => {
+    response.sendFile(__dirname+'/public/search/search.css');
+})
+app.post('/load-cart', (request, response) => {
+    console.log(request.session.name);
+    let name = request.session.name;
+    let askForCart = `SELECT cesta FROM users_table WHERE user='${name}'`
+    console.log(askForCart);
+    conexion.query(askForCart, function(error, results){
+        response.send(results)
+    });
+});
+
+app.post('/load-item', (request, response) => {
+    console.log(request.session.name);
+    let id = request.body.loadthis;
+    let askForCart = `SELECT productname, price, image1, id FROM products_table WHERE id='${id}'`
+    console.log(askForCart);
+    conexion.query(askForCart, function(error, results){
+        response.send(results)
+    });
+});
+
+
+
+
+app.post('/add-to-cart', (request, response) => {
+    console.log(request.session.name);
+    let name = request.session.name;
+    let p = request.body.product;
+    let askForCart = `SELECT cesta FROM users_table WHERE user='${name}'`
+    console.log(askForCart);
+    conexion.query(askForCart, function(error, results){
+        console.log(results[0]);
+        let r = results[0].cesta;
+        console.log(r);
+        console.log(p);
+        let addToCart = `UPDATE users_table SET cesta='${r}.${p}' WHERE user='${name}'`;
+        console.log(addToCart);
+        conexion.query(addToCart, function(error, results){
+            response.send('y');
+        });
+    });
+});
 
 
 httpServer.listen(httpPort, hostname);

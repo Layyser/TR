@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Mi cesta</title>
+    <link rel="icon" href="/Home/image1">
+    <link rel="stylesheet" type="text/css" href="../../search.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="center-li">      
+            <nav class="search-bar">
+            <!-- Barra de busqueda -->
+                <select class="selection" id="sel">
+                    <option selected="selected" value="search-alias=aps">Todas las categorías</option>
+                    <option value="search-alias=grocery">Alimentación</option>
+                    <option value="search-alias=baby">Bebé</option>
+                    <option value="search-alias=beauty">Belleza</option>
+                    <option value="search-alias=diy">Herramientas</option>
+                    <option value="search-alias=vehicles">Mecánicos</option>
+                    <option value="search-alias=sporting">Deportes</option>
+                    <option value="search-alias=electronics">Electrónica</option>
+                    <option value="search-alias=luggage">Equipaje</option>
+                    <option value="search-alias=appliances">Electrodomésticos</option>
+                    <option value="search-alias=handmade">Artesanal</option>
+                    <option value="search-alias=kitchen">Hogar y cocina</option>
+                    <option value="search-alias=lighting">Iluminación</option>
+                    <option value="search-alias=computers">Informática</option>
+                    <option value="search-alias=mi">Música</option>
+                    <option value="search-alias=lawngarden">Jardín</option>
+                    <option value="search-alias=jewelry">Joyería</option>
+                    <option value="search-alias=toys">Juguetes y juegos</option>
+                    <option value="search-alias=stripbooks">Libros</option>
+                    <option value="search-alias=under-ten-dollars">Menos de 10€</option>
+                    <option value="search-alias=fashion">Moda</option>
+                    <option value="search-alias=office-products">Papelería</option>
+                    <option value="search-alias=dvd">Películas y TV</option>
+                    <option value="search-alias=pets">Mascotas</option>
+                    <option value="search-alias=apparel">Ropa y accesorios</option>
+                    <option value="search-alias=hpc">Cuidado personal</option>
+                    <option value="search-alias=videogames">Videojuegos</option>
+                </select>
+                <input class="search-text" id="inputsearch" type="search" autocomplete="off" spellcheck="false" placeholder="Escribe aquí para buscar..." aria-live="polite">
+                <button class="search-button" type="submit" name="Botón" id="inputsubmitsearch"><img class="search-button-img" src="../../svgs/17.svg"></button>
+            </nav>  
+        </div>
+        <ul>
+            <li class="left-li"><a class="categories"><img src="../../svgs/25.svg"></a></li>
+            <li><a class="logo-padding" href="/home"><img class="logo" src="../../svgs/13.svg"></a></li>
+            <li><a class="mercasanvi" href="/home">MercaSanvi</a></li>
+            <li class="out-li"><a href="" class="inside-a-s" id="cesta-button" style="display: none">Cesta</a></li>
+            <li class="center-space"></li>
+            <li class="out-li"><a class="upload" id="upload-button" href="/upload" style="display: none"><img src="../../svgs/33.svg"></a></li>
+            <li class="out-li"><a class="login" id="login-button" href="/login">Iniciar sesión</a></li>
+            <li id="prof" class="out-li" style="display: none"><a href="/profile" class="inside-a">Perfil</a></li>
+            <li class="right-li" style="float:right"><a href="/lang" class="inside-a">Idioma</a></li>
+        </ul>
+    </header>
+    <div class="title00">
+        Añade objetos a tu cesta para ubicarlos rápidamente.
+    </div>
+    <div class="content11">
+        
+        <a class="box" href="" id="1" style="display: none">
+            <div class="box2" id="title1">Title</div>
+            <div class="box1"><img id="img1" src=""></div>
+            <div class="box2" id="price1">Price</div>  
+        </a>
+        
+        <a class="box" href=""  id="2" style="display: none">
+            <div class="box2" id="title2">Title</div>
+            <div class="box1"><img id="img2" src=""></div>
+            <div class="box2" id="price2">Price</div>  
+        </a>
+
+        <a class="box" href="" id="3" style="display: none">
+            <div class="box2" id="title3">Title</div>
+            <div class="box1"><img id="img3" src=""></div>
+            <div class="box2" id="price3">Price</div>  
+        </a>
+
+        <a class="box" href="" id="4" style="display: none">
+            <div class="box2" id="title4">Title</div>
+            <div class="box1"><img id="img4" src=""></div>
+            <div class="box2" id="price4">Price</div>  
+        </a>
+
+        <a class="box" href="" id="5" style="display: none">
+            <div class="box2" id="title5">Title</div>
+            <div class="box1"><img id="img5" src=""></div>
+            <div class="box2" id="price5">Price</div>  
+        </a>
+
+        <a class="box" href="" id="6" style="display: none">
+            <div class="box2" id="title6">Title</div>
+            <div class="box1"><img id="img6" src=""></div>
+            <div class="box2" id="price6">Price</div>  
+        </a>
+
+        <a class="box" href="" id="7" style="display: none">
+            <div class="box2" id="title7">Title</div>
+            <div class="box1"><img id="img7" src=""></div>
+            <div class="box2" id="price7">Price</div>  
+        </a>
+
+        <a class="box" href="" id="8" style="display: none">
+            <div class="box2" id="title8">Title</div>
+            <div class="box1"><img id="img8" src=""></div>
+            <div class="box2" id="price8">Price</div>  
+        </a>
+
+        <a class="box" href="" id="9" style="display: none">
+            <div class="box2" id="title9">Title</div>
+            <div class="box1"><img id="img9" src=""></div>
+            <div class="box2" id="price9">Price</div>  
+        </a>
+
+        <a class="box" href="" id="10" style="display: none">
+            <div class="box2" id="title10">Title</div>
+            <div class="box1"><img id="img10" src=""></div>
+            <div class="box2" id="price10">Price</div>  
+        </a>
+
+        <a class="box" href="" id="11" style="display: none">
+            <div class="box2" id="title11">Title</div>
+            <div class="box1"><img id="img11" src=""></div>
+            <div class="box2" id="price11">Price</div>  
+        </a>
+
+        <a class="box" href="" id="12" style="display: none">
+            <div class="box2" id="title12">Title</div>
+            <div class="box1"><img id="img12" src=""></div>
+            <div class="box2" id="price12">Price</div>  
+        </a>
+
+        <a class="box" href="" id="13" style="display: none">
+            <div class="box2" id="title13">Title</div>
+            <div class="box1"><img id="img13" src=""></div>
+            <div class="box2" id="price13">Price</div>  
+        </a>
+
+        <a class="box" href="" id="14" style="display: none">
+            <div class="box2" id="title14">Title</div>
+            <div class="box1"><img id="img14" src=""></div>
+            <div class="box2" id="price14">Price</div>  
+        </a>
+
+        <a class="box" href="" id="15" style="display: none">
+            <div class="box2" id="title15">Title</div>
+            <div class="box1"><img id="img15" src=""></div>
+            <div class="box2" id="price15">Price</div>  
+        </a>
+
+        <a class="box" href="" id="16" style="display: none">
+            <div class="box2" id="title16">Title</div>
+            <div class="box1"><img id="img16" src=""></div>
+            <div class="box2" id="price16">Price</div>  
+        </a>
+
+        <a class="box" href="" id="17" style="display: none">
+            <div class="box2" id="title17">Title</div>
+            <div class="box1"><img id="img17" src=""></div>
+            <div class="box2" id="price17">Price</div>  
+        </a>
+
+        <a class="box" href="" id="18" style="display: none">
+            <div class="box2" id="title18">Title</div>
+            <div class="box1"><img id="img18" src=""></div>
+            <div class="box2" id="price18">Price</div>  
+        </a>
+
+        <a class="box" href="" id="19" style="display: none">
+            <div class="box2" id="title19">Title</div>
+            <div class="box1"><img id="img19" src=""></div>
+            <div class="box2" id="price19">Price</div>  
+        </a>
+
+        <a class="box" href="" id="20" style="display: none">
+            <div class="box2" id="title20">Title</div>
+            <div class="box1"><img id="img20" src=""></div>
+            <div class="box2" id="price20">Price</div>  
+        </a>
+
+        <a class="box" href="" id="21" style="display: none">
+            <div class="box2" id="title21">Title</div>
+            <div class="box1"><img id="img21" src=""></div>
+            <div class="box2" id="price21">Price</div>  
+        </a>
+
+        <a class="box" href="" id="22" style="display: none">
+            <div class="box2" id="title22">Title</div>
+            <div class="box1"><img id="img22" src=""></div>
+            <div class="box2" id="price22">Price</div>  
+        </a>
+
+        <a class="box" href="" id="23" style="display: none">
+            <div class="box2" id="title23">Title</div>
+            <div class="box1"><img id="img23" src=""></div>
+            <div class="box2" id="price23">Price</div>  
+        </a>
+
+        <a class="box" href="" id="24" style="display: none">
+            <div class="box2" id="title24">Title</div>
+            <div class="box1"><img id="img24" src=""></div>
+            <div class="box2" id="price24">Price</div>  
+        </a>
+
+    </div>
+    <script src="../../home.js"></script>
+    <script src="../../cesta.js"></script>
+
+</body>
+</html>

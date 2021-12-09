@@ -16,9 +16,13 @@ two.addEventListener("click", (e)=>{
 
 });
 
+var currentUrl = window.location.href
+splitUrl = currentUrl.substring(0, currentUrl.length - 7);
+console.log(splitUrl);
+
 const three = document.getElementById("3");
 three.addEventListener("click", (e)=>{ 
-    window.location.replace('https://192.168.0.12/home')
+    window.location.replace(`${splitUrl}home`)
 });
 
 
@@ -199,7 +203,6 @@ sendName.addEventListener("click", (e)=>{
     }
 });
 
-
 const sendGender = document.getElementById("send-gender");
 sendGender.addEventListener("click", (e)=>{
     var newGender = document.getElementById("gender-select").value;
@@ -240,7 +243,3 @@ sendBday.addEventListener("click", (e)=>{
     }
     
 })
-
-
-
-

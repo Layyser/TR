@@ -20,7 +20,7 @@
                     <option value="search-alias=grocery">Alimentación</option>
                     <option value="search-alias=baby">Bebé</option>
                     <option value="search-alias=beauty">Belleza</option>
-                    <option value="search-alias=diy">Herramientas</option>>
+                    <option value="search-alias=diy">Herramientas</option>
                     <option value="search-alias=vehicles">Mecánicos</option>
                     <option value="search-alias=sporting">Deportes</option>
                     <option value="search-alias=electronics">Electrónica</option>
@@ -44,15 +44,15 @@
                     <option value="search-alias=hpc">Cuidado personal</option>
                     <option value="search-alias=videogames">Videojuegos</option>
                 </select>
-                <input class="search-text" id="input" type="search" autocomplete="off" spellcheck="false" placeholder="Escribe aquí para buscar..." aria-live="polite">
-                <button class="search-button" type="submit" name="Botón"><img class="search-button-img" src="../svgs/17.svg"></button>
+                <input class="search-text" id="inputsearch" type="search" autocomplete="off" spellcheck="false" placeholder="Escribe aquí para buscar..." aria-live="polite">
+                <button class="search-button" type="submit" name="Botón" id="inputsubmitsearch"><img class="search-button-img" src="../svgs/17.svg"></button>
             </nav>  
         </div>
         <ul>
             <li class="left-li"><a class="categories"><img src="../svgs/25.svg"></a></li>
             <li><a class="logo-padding" href="/home"><img class="logo" src="../svgs/13.svg"></a></li>
             <li><a class="mercasanvi" href="/home">MercaSanvi</a></li>
-            <li class="out-li"><a href="/cesta" class="inside-a">Cesta</a></li>
+            <li class="out-li"><a href="/cart" class="inside-a" id="cesta-button" style="display: none">Cesta</a></li>
             <li class="center-space"></li>
             <li class="out-li"><a class="upload" id="upload-button" href="/upload" style="display: none"><img src="../svgs/33.svg"></a></li>
             <li class="out-li"><a class="login" id="login-button" href="/login">Iniciar sesión</a></li>
@@ -144,8 +144,8 @@
         </div>
     </div>
     <div class="block2">
-        <h4>Descripción</h4>
-        <div id="description"></div>
+        <h4 class="h4s">Descripción</h4>
+        <div id="description" class="desc"></div>
     
         <h4>Palabras clave</h4>
         <ul class="keywords">
@@ -159,6 +159,12 @@
     
         <h4>Más detalles</h4>
         <div id="details"></div>
+        
+    </div>
+
+
+    <div class="button3" id="añadircesta">
+        Añadir a la cesta
     </div>
 
 
@@ -172,12 +178,8 @@
 
 
 
-
-
-
-
-
-    <script src="../Home/slider"></script>
+    <script src="../../search.js"></script>
+    <script src="../home/slider.js"></script>
     <script src="../product.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
             <li class="left-li"><a class="categories"><img src="svgs/25.svg"></a></li>
             <li><a class="logo-padding" href="/home"><img class="logo" src="svgs/13.svg"></a></li>
             <li><a class="mercasanvi" href="/home">MercaSanvi</a></li>
-            <li class="out-li"><a href="/cesta" class="inside-a">Cesta</a></li>
+            <li class="out-li"><a href="/cart" class="inside-a">Cesta</a></li>
             <li class="center-li"></li>
             <li id="prof" class="out-li"><a href="/profile" class="inside-a">Perfil</a></li>
             <li class="right-li" style="float:right"><a href="/lang" class="inside-a">Idioma</a></li>
@@ -44,7 +44,7 @@
                     </div>
                     <ul>
                         <li>Para iniciar, introduce aqui el nombre de tu producto</li>
-                        <li><input type="text" id="productname"></li>
+                        <li><input type="text" id="productname" autocomplete="off"></li>
                         <li>
                             <select class="selection" id="sel">
                                 <option selected="selected" value="search-alias=aps">Todas las categorías</option>
@@ -270,13 +270,13 @@
                         <h2 class="hola">Añadir palabras clave</h2>
                     </div>
                     <ul>
-                        <li>Añade un máximo de 6 palabras que ayudaran a tu producto a tener mas visibilidad</li>
-                        <li><input type="text" maxlength="30" id="keyword1"></li>
-                        <li><input type="text" maxlength="30" id="keyword2"></li>
-                        <li><input type="text" maxlength="30" id="keyword3"></li>
-                        <li><input type="text" maxlength="30" id="keyword4"></li>
-                        <li><input type="text" maxlength="30" id="keyword5"></li>
-                        <li><input type="text" maxlength="30" id="keyword6"></li>
+                        <li>Tu producto se encontrará al buscar cualquiera de las siguientes 6 palabras:</li>
+                        <li><input type="text" maxlength="30" id="keyword1" autocomplete="off"></li>
+                        <li><input type="text" maxlength="30" id="keyword2" autocomplete="off"></li>
+                        <li><input type="text" maxlength="30" id="keyword3" autocomplete="off"></li>
+                        <li><input type="text" maxlength="30" id="keyword4" autocomplete="off"></li>
+                        <li><input type="text" maxlength="30" id="keyword5" autocomplete="off"></li>
+                        <li><input type="text" maxlength="30" id="keyword6" autocomplete="off"></li>
                     </ul>
                 </div>
                 <div class="buttons">

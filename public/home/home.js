@@ -4,6 +4,7 @@ const botonLogin = document.getElementById("login-button");
 const botonMas = document.getElementById("register");
 const botonProfile = document.getElementById("prof");
 const botonUpload = document.getElementById("upload-button");
+const botonCesta = document.getElementById("cesta-button");
 
 axios.post("/home",{
     
@@ -14,10 +15,12 @@ axios.post("/home",{
         botonLogin.classList.remove('login');
         botonLogin.innerHTML = response.data.name;
         botonMas.parentNode.removeChild(botonMas);
+        botonCesta.style.display = "block";
     }
     else {
         console.log('Inicia sesión para disfrutar de la web');
         botonProfile.parentNode.removeChild(botonProfile);
+        botonCesta.style.display = "none";
     }
 });
 
@@ -29,9 +32,11 @@ axios.post("/check-if-admin",{
     if (response.data.admin == 1){
         botonUpload.style.display = "block";
         botonProfile.style.display = "block";
+        botonCesta.style.display = "block";
     }
     else {
         botonUpload.style.display = "none";
         botonProfile.style.display = "block";
+
     }
 });
